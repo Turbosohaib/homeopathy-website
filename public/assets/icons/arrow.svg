@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" id="arrow">
+  <defs>
+    <linearGradient id="a">
+      <stop offset="0" style="stop-color:#cad1d8;stop-opacity:1"></stop>
+      <stop offset="1" style="stop-color:#babdc1;stop-opacity:1"></stop>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="b" x1="90.002" x2="102.01" y1="1159.696" y2="1159.696" gradientTransform="matrix(0 1 1 0 -1152.03 948.356)" gradientUnits="userSpaceOnUse"></linearGradient>
+  </defs>
+  <path d="M4.013 1039.387a1 1 0 0 1 1.693-.75l5.31 4.99a1 1 0 0 1 0 1.458l-5.31 4.99a1 1 0 1 1-1.369-1.457l4.535-4.262-4.535-4.262a1 1 0 0 1-.324-.707z" style="color:#000;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000;solid-opacity:1;fill:url(#b);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" transform="translate(0 -1036.362)"></path>
+</svg>
