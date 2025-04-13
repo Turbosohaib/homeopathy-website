@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react"
 const About = () => {
     return (
         <section className="py-16 sm:px-24 bg-muted/30">
-            <div className="container px-10">
+            <div className="container px-6">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">About Dr. Muhammad Zahid</h2>

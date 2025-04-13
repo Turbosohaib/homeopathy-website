@@ -32,7 +32,7 @@ const Header = () => {
     return (
         <>
             <TopBar />
-            <header className="sticky top-0 z-50 w-full bg-background border-b sm:px-10 px-5">
+            <header className="sticky top-0 z-50 w-full bg-background border-b sm:px-6 px-5">
                 <div className="flex h-16 items-center justify-between">
                     <a href="/" className="flex items-center space-x-2">
                         <Image

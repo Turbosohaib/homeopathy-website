@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 const TopBar = () => {
     return (
-        <div className="bg-[#0059B3] text-primary-foreground py-2 px-10 hidden md:block">
+        <div className="bg-[#0059B3] text-primary-foreground py-2 px-6 hidden md:block">
             <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-4">
                     <div className="flex items-center space-x-1">

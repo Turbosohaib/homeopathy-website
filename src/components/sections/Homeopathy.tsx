@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react"
 
 const Homeopathy = () => {
     return (
-        <section className="py-16 px-10 sm:px-24">
+        <section className="py-16 px-6 sm:px-24">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Scientific Homeopathy</h2>

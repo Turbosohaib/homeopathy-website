@@ -27,14 +27,14 @@ export default function AboutPage() {
                 </div>
                 <div className="container absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center text-white">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">About Us</h1>
-                    <p className="mt-6 max-w-2xl text-lg">
+                    <p className="mt-6 max-w-2xl text-lg px-5 sm:px-0">
                         Learn about our mission and Dr. Muhammad Zahid&apos;s commitment to providing exceptional homeopathic care.
                     </p>
                 </div>
             </section>
             <main className="flex-1 w-full flex flex-col justify-center items-center ">
                 {/* Breadcrumb */}
-                <section className="border-b bg-muted/30 w-full px-10 sm:px-24">
+                <section className="border-b bg-muted/30 w-full px-6 sm:px-24">
                     <div className="container py-4">
                         <div className="flex items-center text-sm text-muted-foreground">
                             <a href="/" className="hover:text-primary transition-colors">
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Mission & Vision */}
-                <section className="py-16 px-10 sm:px-24">
+                <section className="py-16 px-6 sm:px-24">
                     <div className="container">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* About Dr. Muhammad Zahid */}
-                <section className="py-16 bg-muted/30 px-10 sm:px-24 w-full flex items-center justify-center">
+                <section className="py-16 bg-muted/30 px-6 sm:px-24 w-full flex items-center justify-center">
                     <div className="container">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Meet Dr. Muhammad Zahid</h2>
@@ -229,7 +229,7 @@ export default function AboutPage() {
                                         <h3 className="text-xl font-bold mb-4">Areas of Specialization</h3>
                                         <ul className="space-y-4">
                                             <li className="flex items-start">
-                                                <div className="mr-4 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                                <div className="mr-4 h-8 w-8 px-4 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
                                                     <span className="text-primary font-bold">1</span>
                                                 </div>
                                                 <div>
@@ -241,7 +241,7 @@ export default function AboutPage() {
                                                 </div>
                                             </li>
                                             <li className="flex items-start">
-                                                <div className="mr-4 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                                <div className="mr-4 h-8 w-8 px-4 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
                                                     <span className="text-primary font-bold">2</span>
                                                 </div>
                                                 <div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                                                 </div>
                                             </li>
                                             <li className="flex items-start">
-                                                <div className="mr-4 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                                <div className="mr-4 h-8 w-8 px-4 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
                                                     <span className="text-primary font-bold">3</span>
                                                 </div>
                                                 <div>
@@ -265,7 +265,7 @@ export default function AboutPage() {
                                                 </div>
                                             </li>
                                             <li className="flex items-start">
-                                                <div className="mr-4 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                                <div className="mr-4 h-8 w-8 px-4 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
                                                     <span className="text-primary font-bold">4</span>
                                                 </div>
                                                 <div>
@@ -277,7 +277,7 @@ export default function AboutPage() {
                                                 </div>
                                             </li>
                                             <li className="flex items-start">
-                                                <div className="mr-4 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                                <div className="mr-4 h-8 w-8 px-4 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
                                                     <span className="text-primary font-bold">5</span>
                                                 </div>
                                                 <div>
@@ -346,7 +346,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Practice Philosophy */}
-                <section className="py-16 px-10 sm:px-24">
+                <section className="py-16 px-6 sm:px-24">
                     <div className="container">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Practice Philosophy</h2>
@@ -435,7 +435,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Our Clinic */}
-                <section className="py-16 bg-muted/30 px-10 sm:px-24 w-full flex items-center justify-center">
+                <section className="py-16 bg-muted/30 px-6 sm:px-24 w-full flex items-center justify-center">
                     <div className="container">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Our Clinic</h2>
@@ -573,7 +573,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Certifications & Affiliations */}
-                <section className="py-16 px-10 sm:px-24">
+                <section className="py-16 px-6 sm:px-24">
                     <div className="container">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Certifications & Affiliations</h2>
@@ -633,7 +633,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-16 px-10 sm:px-24 w-full bg-[#0059B3] text-primary-foreground flex items-center justify-center">
+                <section className="py-16 px-6 sm:px-24 w-full bg-[#0059B3] text-primary-foreground flex items-center justify-center">
                     <div className="container">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>

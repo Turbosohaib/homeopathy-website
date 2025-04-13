@@ -7,7 +7,7 @@ const Appointment = () => {
         <section id="contact" className="py-16 sm:px-24 bg-muted">
             <div className="container">
                 <div className="grid md:grid-cols-2 gap-12">
-                    <div className="px-10 sm:px-0">
+                    <div className="px-6 sm:px-0">
                         <h2 className="text-xl sm:text-3xl font-bold tracking-tight">Book an Appointment</h2>
                         <div className="mt-4 h-1 w-20 bg-[#0059B3]"></div>
                         <p className="mt-6 text-muted-foreground">

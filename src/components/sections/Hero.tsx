@@ -17,7 +17,7 @@ const Hero = () => {
             </div>
             <div className="container absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center text-white">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Advanced Homeopathic Care</h1>
-                <p className="mt-6 max-w-2xl text-lg">
+                <p className="mt-6 max-w-2xl text-lg px-5 sm:px-0">
                     Providing scientific homeopathic treatments for a wide range of conditions with proven results and
                     personalized care.
                 </p>

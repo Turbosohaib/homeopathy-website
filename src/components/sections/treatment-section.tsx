@@ -37,7 +37,7 @@ const treatments = [
 
 export default function TreatmentSection() {
     return (
-        <section className="py-16 px-10 sm:px-24 bg-white">
+        <section className="py-16 px-6 sm:px-24 bg-white">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Conditions We Treat</h2>
