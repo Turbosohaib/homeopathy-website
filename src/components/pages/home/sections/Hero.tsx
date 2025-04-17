@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-const Hero = () => {
+export const Hero = () => {
     return (
         <section className="relative h-[83vh]">
             <div className="absolute inset-0 bg-black/50 z-10" />
@@ -16,14 +16,16 @@ const Hero = () => {
                 />
             </div>
             <div className="container absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center text-white">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Advanced Homeopathic Care</h1>
-                <p className="mt-6 max-w-2xl text-lg px-5 sm:px-0">
-                    Providing scientific homeopathic treatments for a wide range of conditions with proven results and
-                    personalized care.
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fadeIn">
+                    Advanced Homeopathic Care
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg px-5 sm:px-0 animate-slideUp">
+                    Providing scientific homeopathic treatments for a wide range of
+                    conditions with proven results and personalized care.
                 </p>
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fadeIn">
                     <Button className="bg-[#0059B3] hover:bg-[#002ab3]" size="lg" asChild>
-                        <a href="/appointment">Book an Appointment</a>
+                        <a href="#appointment">Book an Appointment</a>
                     </Button>
                     <Button
                         size="lg"
@@ -36,7 +38,5 @@ const Hero = () => {
                 </div>
             </div>
         </section>
-    )
-}
-
-export default Hero
+    );
+};

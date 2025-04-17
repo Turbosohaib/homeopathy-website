@@ -1,24 +1,24 @@
-import React from 'react'
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRight } from "lucide-react";
 
-
-
-const Homeopathy = () => {
+export const Homeopathy = () => {
     return (
         <section className="py-16 px-6 sm:px-24">
             <div className="container">
-                <div className="text-center mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Scientific Homeopathy</h2>
+                <div className="text-center mb-12 z-10">
+                    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
+                        Scientific Homeopathy
+                    </h2>
                     <div className="mt-4 h-1 w-20 bg-[#0059B3] mx-auto"></div>
                     <p className="mt-6 max-w-2xl mx-auto text-muted-foreground">
-                        Discover the science behind homeopathic treatments and how they can effectively address various health
-                        conditions.
+                        Discover the science behind homeopathic treatments and how they can
+                        effectively address various health conditions.
                     </p>
                 </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <Card className="border-0 shadow-[0px_0px_5px_0px_rgba(105,105,105,1)]">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 z-10">
+                    <Card className="border-0 shadow-lg z-10">
                         <CardContent className="">
                             <div className="h-12 w-12 rounded-full bg-[#0059B3]/10 flex items-center justify-center mb-4">
                                 <svg
@@ -38,11 +38,12 @@ const Homeopathy = () => {
                             </div>
                             <h3 className="text-xl font-bold">Personalized Care</h3>
                             <p className="mt-2 text-muted-foreground">
-                                Treatments tailored to your specific condition, medical history, and individual needs.
+                                Treatments tailored to your specific condition, medical history,
+                                and individual needs.
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="border-0 shadow-[0px_0px_5px_0px_rgba(105,105,105,1)]">
+                    <Card className="border-0 shadow-lg z-10">
                         <CardContent className="">
                             <div className="h-12 w-12 rounded-full bg-[#0059B3]/10 flex items-center justify-center mb-4">
                                 <svg
@@ -62,11 +63,12 @@ const Homeopathy = () => {
                             </div>
                             <h3 className="text-xl font-bold">Natural Healing</h3>
                             <p className="mt-2 text-muted-foreground">
-                                Stimulate your body&apos;s natural healing mechanisms without harmful side effects.
+                                Stimulate your body&apos;s natural healing mechanisms without
+                                harmful side effects.
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="border-0 shadow-[0px_0px_5px_0px_rgba(105,105,105,1)]">
+                    <Card className="border-0 shadow-lg z-10">
                         <CardContent className="">
                             <div className="h-12 w-12 rounded-full bg-[#0059B3]/10 flex items-center justify-center mb-4">
                                 <svg
@@ -86,7 +88,8 @@ const Homeopathy = () => {
                             </div>
                             <h3 className="text-xl font-bold">Research-Backed</h3>
                             <p className="mt-2 text-muted-foreground">
-                                Treatments supported by clinical research and decades of successful patient outcomes.
+                                Treatments supported by clinical research and decades of
+                                successful patient outcomes.
                             </p>
                         </CardContent>
                     </Card>
@@ -100,7 +103,5 @@ const Homeopathy = () => {
                 </div>
             </div>
         </section>
-    )
-}
-
-export default Homeopathy
+    );
+};

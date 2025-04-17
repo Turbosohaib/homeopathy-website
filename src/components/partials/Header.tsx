@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -12,7 +12,7 @@ const navItems = [
     { href: "/homeopathy", label: "Homeopathy" },
     { href: "/diseases", label: "Diseases" },
     { href: "/treatment", label: "Treatment" },
-    { href: "#contact", label: "Contact" },
+    { href: "#appointment", label: "Contact" },
 ];
 
 const Header = () => {
@@ -60,7 +60,7 @@ const Header = () => {
                             </a>
                         ))}
                         <Button className="bg-[#0059B3] hover:bg-[#002ab3]" asChild>
-                            <a href="/appointment">Book Appointment</a>
+                            <a href="#appointment">Book Appointment</a>
                         </Button>
                     </nav>
 
@@ -110,7 +110,7 @@ const Header = () => {
                             </a>
                         ))}
                         <Button className="bg-[#0059B3] hover:bg-[#002ab3]" asChild>
-                            <a href="/appointment">Book Appointment</a>
+                            <a href="#appointment">Book Appointment</a>
                         </Button>
                     </div>
                 </div>
