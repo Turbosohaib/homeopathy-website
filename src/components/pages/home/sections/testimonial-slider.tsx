@@ -6,6 +6,7 @@ import { Quote } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
+import { motion } from "framer-motion";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -40,13 +41,23 @@ const testimonials = [
 
 export function TestimonialSlider() {
     const [activeIndex, setActiveIndex] = useState(0);
-
     const swiperRef = useRef<SwiperCore>(null);
 
     return (
-        <section className="py-16">
-            <div className="">
-                <div className="text-center mb-12">
+        <section className="py-16 z-10">
+            <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.2 }}
+            >
+                {/* Title Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="text-center mb-12"
+                >
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
                         Patient Testimonials
                     </h2>
@@ -55,9 +66,15 @@ export function TestimonialSlider() {
                         Read what our patients have to say about their experiences and
                         treatment outcomes.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="relative mx-auto max-w-[350px] sm:max-w-xl md:max-w-2xl">
+                {/* Slider Section */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                    className="relative mx-auto max-w-[350px] sm:max-w-xl md:max-w-2xl"
+                >
                     {/* Left Arrow */}
                     <button
                         onClick={() => swiperRef.current?.slidePrev()}
@@ -77,6 +94,7 @@ export function TestimonialSlider() {
                     >
                         <Image src={Arrow_Icon} alt="arrow-icon" className="w-[40px]" />
                     </button>
+
                     <Swiper
                         spaceBetween={20}
                         slidesPerView="auto"
@@ -89,42 +107,49 @@ export function TestimonialSlider() {
                         onSlideChange={(swiper) => {
                             setActiveIndex(swiper.realIndex);
                         }}
-                        onSwiper={(swiper) => (swiperRef.current = swiper)} // capture instance
+                        onSwiper={(swiper) => (swiperRef.current = swiper)}
                     >
                         {testimonials.map((testimonial) => (
                             <SwiperSlide
                                 key={testimonial.id}
                                 className="w-full max-w-[340px] sm:max-w-xl md:max-w-2xl px-4 pb-8"
                             >
-                                <Card className="border-none shadow-lg">
-                                    <CardContent className="px-8 py-4 flex-1">
-                                        <Quote className="h-10 w-10 text-primary/20 mb-4" />
-                                        <p className="text-sm italic mb-6">{testimonial.quote}</p>
-                                        <div className="flex items-center">
-                                            {/* Fixed aspect ratio for the image */}
-                                            <div className="relative h-14 w-14 rounded-full overflow-hidden mr-4 aspect-w-1 aspect-h-1">
-                                                <Image
-                                                    src={testimonial.image || "/placeholder.svg"}
-                                                    alt={testimonial.name}
-                                                    fill
-                                                    style={{ objectFit: "cover" }}
-                                                    className="rounded-md"
-                                                />
+                                <motion.div
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    viewport={{ once: true }}
+                                >
+                                    <Card className="border-none shadow-lg">
+                                        <CardContent className="px-8 py-4 flex-1">
+                                            <Quote className="h-10 w-10 text-primary/20 mb-4" />
+                                            <p className="text-sm italic mb-6">{testimonial.quote}</p>
+                                            <div className="flex items-center">
+                                                <div className="relative h-14 w-14 rounded-full overflow-hidden mr-4 aspect-w-1 aspect-h-1">
+                                                    <Image
+                                                        src={testimonial.image || "/placeholder.svg"}
+                                                        alt={testimonial.name}
+                                                        fill
+                                                        style={{ objectFit: "cover" }}
+                                                        className="rounded-md"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold">{testimonial.name}</h4>
+                                                    <p className="text-sm text-muted-foreground">
+                                                        {testimonial.location}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <h4 className="font-bold">{testimonial.name}</h4>
-                                                <p className="text-sm text-muted-foreground">
-                                                    {testimonial.location}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
+
+                    {/* Mobile Pagination */}
                     <div className="flex justify-center items-center space-x-2">
-                        {/* Left Arrow */}
                         <button
                             onClick={() => swiperRef.current?.slidePrev()}
                             className="sm:hidden block z-10 cursor-pointer"
@@ -135,6 +160,7 @@ export function TestimonialSlider() {
                                 className="w-[40px] rotate-180"
                             />
                         </button>
+
                         {testimonials.map((_, index) => (
                             <button
                                 key={index}
@@ -147,7 +173,7 @@ export function TestimonialSlider() {
                                 <span className="sr-only">Testimonial {index + 1}</span>
                             </button>
                         ))}
-                        {/* Right Arrow */}
+
                         <button
                             onClick={() => swiperRef.current?.slideNext()}
                             className="sm:hidden block z-10 cursor-pointer"
@@ -155,8 +181,8 @@ export function TestimonialSlider() {
                             <Image src={Arrow_Icon} alt="arrow-icon" className="w-[40px]" />
                         </button>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 }

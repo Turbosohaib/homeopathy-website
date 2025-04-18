@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const treatments = [
     {
@@ -38,11 +42,33 @@ const treatments = [
     },
 ];
 
+const container = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const item = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export function TreatmentSection() {
     return (
-        <section className="py-16 px-6 sm:px-24 bg-muted">
-            <div className="container">
-                <div className="text-center mb-12 z-10">
+        <section className="py-16 px-6 sm:px-24 z-10">
+            <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="container"
+            >
+                <motion.div
+                    variants={item}
+                    className="text-center mb-12 z-10"
+                >
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
                         Conditions We Treat
                     </h2>
@@ -51,47 +77,59 @@ export function TreatmentSection() {
                         Dr. Muhammad Zahid specializes in treating a wide range of health
                         conditions using scientific homeopathic approaches.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <motion.div
+                    className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                    variants={container}
+                >
                     {treatments.map((treatment) => (
-                        <Card key={treatment.id} className="pt-0 border-0 shadow-lg z-10">
-                            <div className="relative h-48 w-full">
-                                <Image
-                                    src={treatment.image || "/placeholder.svg"}
-                                    alt={treatment.title}
-                                    fill
-                                    className="object-cover rounded-t-lg"
-                                />
-                            </div>
-                            <CardContent className="px-6 pb-6 flex-1 relative">
-                                <h3 className="text-xl font-bold mb-2">{treatment.title}</h3>
-                                <p className="text-muted-foreground mb-4">
-                                    {treatment.description}
-                                </p>
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className="absolute bottom-0 w-fit"
-                                >
-                                    <a href={treatment.link}>
-                                        Learn More <ChevronRight className="ml-1 h-4 w-4" />
-                                    </a>
-                                </Button>
-                            </CardContent>
-                        </Card>
+                        <motion.div
+                            key={treatment.id}
+                            variants={item}
+                            whileHover={{ scale: 1.03 }}
+                        >
+                            <Card className="pt-0 border-0 shadow-lg z-10 h-full">
+                                <div className="relative h-48 w-full">
+                                    <Image
+                                        src={treatment.image || "/placeholder.svg"}
+                                        alt={treatment.title}
+                                        fill
+                                        className="object-cover rounded-t-lg"
+                                    />
+                                </div>
+                                <CardContent className="px-6 pb-6 flex-1 relative">
+                                    <h3 className="text-xl font-bold mb-2">{treatment.title}</h3>
+                                    <p className="text-muted-foreground mb-4">
+                                        {treatment.description}
+                                    </p>
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        asChild
+                                        className="absolute bottom-0 w-fit"
+                                    >
+                                        <Link href={treatment.link}>
+                                            Learn More <ChevronRight className="ml-1 h-4 w-4" />
+                                        </Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
-                <div className="mt-12 text-center">
-                    <Button asChild className="bg-[#0059B3] hover:bg-[#002ab3] cursor-pointer z-10 scale-z-50">
-                        <a href="/diseases">
+                <motion.div variants={item} className="mt-12 text-center">
+                    <Button
+                        asChild
+                        className="bg-[#0059B3] hover:bg-[#002ab3] cursor-pointer z-10"
+                    >
+                        <Link href="/diseases">
                             View All Conditions <ChevronRight className="ml-2 h-4 w-4" />
-                        </a>
+                        </Link>
                     </Button>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 }

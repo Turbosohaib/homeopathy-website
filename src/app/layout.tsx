@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 import { Quicksand } from "next/font/google";
 import "./globals.css"
 import { ThemeProvider } from "@/components/providers/theme-provider"
+import Header from "@/components/partials/Header";
+import Footer from "@/components/partials/Footer";
+import { CallToAction } from "@/components/pages/about/sections";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -21,7 +24,13 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body className={`${quicksand.className}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          {children}
+          <div className="flex flex-col min-h-screen bg-[#f0fdf4]">
+            <Header />
+            {children}
+            {/* CTA Section */}
+            <CallToAction />
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

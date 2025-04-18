@@ -4,7 +4,7 @@ import AppointmentForm from "@/components/partials/appointment-form";
 
 export const Appointment = () => {
     return (
-        <section id="appointment" className="py-16 sm:px-24 bg-muted">
+        <section id="appointment" className="py-16 sm:px-24">
             <div className="container">
                 <div className="grid md:grid-cols-2 gap-12">
                     <div className="px-6 sm:px-0 z-10">

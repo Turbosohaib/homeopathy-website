@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import TopBar from "./TopBar";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navItems = [
     { href: "/", label: "Home" },
@@ -17,54 +18,82 @@ const navItems = [
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showHeader, setShowHeader] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
     const pathname = usePathname();
 
-    const toggleMobileNav = () => {
-        setIsOpen((prev) => !prev);
-    };
+    const toggleMobileNav = () => setIsOpen((prev) => !prev);
 
     const isActive = (href: string) => {
-        // Handles hash links like "#contact"
         if (href.startsWith("#")) return false;
         return pathname === href;
     };
 
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 640); // Tailwind 'sm' breakpoint
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setShowHeader(currentScrollY < lastScrollY || currentScrollY < 10);
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY]);
+
     return (
         <>
-            <TopBar />
-            <header className="sticky top-0 z-50 w-full bg-background border-b sm:px-6 px-5">
-                <div className="flex h-16 items-center justify-between">
-                    <a href="/" className="flex items-center space-x-2">
-                        <Image
-                            src="/assets/logos/homopathy-logo.png"
-                            alt="Doctor's Logo"
-                            width={40}
-                            height={40}
-                            className="rounded-md"
-                        />
+            <motion.header
+                initial={isMobile ? false : { y: -100, opacity: 0 }}
+                animate={isMobile ? {} : { y: showHeader ? 0 : -100, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 60, damping: 15 }}
+                className="sm:fixed sticky top-0 z-50 w-full bg-background border-b"
+            >
+                <TopBar />
+                <div className="flex h-16 items-center justify-between sm:px-6 px-5">
+                    <Link href="/" className="flex items-center space-x-2">
+                        <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
+                            <Image
+                                src="/assets/logos/homopathy-logo.png"
+                                alt="Doctor's Logo"
+                                width={40}
+                                height={40}
+                                className="rounded-md"
+                            />
+                        </motion.div>
                         <span className="text-xl font-bold">Dr. Muhammad Zahid</span>
-                    </a>
+                    </Link>
 
-                    {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center space-x-5">
                         {navItems.map((item, index) => (
-                            <a
+                            <motion.a
                                 key={index}
                                 href={item.href}
-                                className={`font-medium transition-colors border-b-2 ${isActive(item.href)
+                                whileHover={{ scale: 1.05 }}
+                                className={`relative font-medium transition-colors border-b-2 ${isActive(item.href)
                                     ? "text-[#0059B3] border-[#0059B3]"
                                     : "border-transparent hover:text-[#0059B3] hover:border-[#0059B3]"
                                     }`}
                             >
                                 {item.label}
-                            </a>
+                            </motion.a>
                         ))}
-                        <Button className="bg-[#0059B3] hover:bg-[#002ab3]" asChild>
-                            <a href="#appointment">Book Appointment</a>
-                        </Button>
+                        <motion.div whileHover={{ scale: 1.05 }}>
+                            <Button className="bg-[#0059B3] hover:bg-[#002ab3]" asChild>
+                                <Link href="#appointment">Book Appointment</Link>
+                            </Button>
+                        </motion.div>
                     </nav>
 
-                    {/* Mobile nav button */}
                     <Button
                         variant="outline"
                         size="icon"
@@ -91,30 +120,36 @@ const Header = () => {
                     </Button>
                 </div>
 
-                {/* Mobile Navigation */}
-                <div
-                    className={`lg:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96" : "max-h-0"
-                        }`}
-                >
-                    <div className="flex flex-col space-y-2 px-2 py-2">
-                        {navItems.map((item, index) => (
-                            <a
-                                key={index}
-                                href={item.href}
-                                className={`font-medium transition-colors border-b-2 ${isActive(item.href)
-                                    ? "text-[#0059B3] border-[#0059B3]"
-                                    : "border-transparent hover:text-[#0059B3] hover:border-[#0059B3]"
-                                    }`}
-                            >
-                                {item.label}
-                            </a>
-                        ))}
-                        <Button className="bg-[#0059B3] hover:bg-[#002ab3]" asChild>
-                            <a href="#appointment">Book Appointment</a>
-                        </Button>
-                    </div>
-                </div>
-            </header>
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="lg:hidden overflow-hidden"
+                        >
+                            <div className="flex flex-col space-y-2 px-2 py-2">
+                                {navItems.map((item, index) => (
+                                    <Link
+                                        key={index}
+                                        href={item.href}
+                                        className={`font-medium transition-colors border-b-2 ${isActive(item.href)
+                                            ? "text-[#0059B3] border-[#0059B3]"
+                                            : "border-transparent hover:text-[#0059B3] hover:border-[#0059B3]"
+                                            }`}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                                <Button className="bg-[#0059B3] hover:bg-[#002ab3]" asChild>
+                                    <Link href="#appointment">Book Appointment</Link>
+                                </Button>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </motion.header>
         </>
     );
 };

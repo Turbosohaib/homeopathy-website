@@ -1,5 +1,6 @@
 import React from 'react'
 import { Phone, Mail, MapPin } from "lucide-react"
+import Link from 'next/link'
 
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
                             Providing scientific homeopathic treatments with proven results and personalized care.
                         </p>
                         <div className="flex space-x-4 mt-6">
-                            <a href="#" className="text-primary-foreground hover:text-primary-foreground/80">
+                            <Link href="#" className="text-primary-foreground hover:text-primary-foreground/80">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -28,8 +29,8 @@ const Footer = () => {
                                 >
                                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                                 </svg>
-                            </a>
-                            <a href="#" className="text-primary-foreground hover:text-primary-foreground/80">
+                            </Link>
+                            <Link href="#" className="text-primary-foreground hover:text-primary-foreground/80">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -46,8 +47,8 @@ const Footer = () => {
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                 </svg>
-                            </a>
-                            <a href="#" className="text-primary-foreground hover:text-primary-foreground/80">
+                            </Link>
+                            <Link href="#" className="text-primary-foreground hover:text-primary-foreground/80">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -62,8 +63,8 @@ const Footer = () => {
                                 >
                                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                                 </svg>
-                            </a>
-                            <a href="#" className="text-primary-foreground hover:text-primary-foreground/80">
+                            </Link>
+                            <Link href="#" className="text-primary-foreground hover:text-primary-foreground/80">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -80,41 +81,41 @@ const Footer = () => {
                                     <rect width="4" height="12" x="2" y="9" />
                                     <circle cx="4" cy="4" r="2" />
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div>
                         <h3 className="text-lg font-bold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a href="/about" className="text-primary-foreground/80 hover:text-primary-foreground">
+                                <Link href="/about" className="text-primary-foreground/80 hover:text-primary-foreground">
                                     About Us
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/homeopathy" className="text-primary-foreground/80 hover:text-primary-foreground">
+                                <Link href="/homeopathy" className="text-primary-foreground/80 hover:text-primary-foreground">
                                     Homeopathy
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/diseases" className="text-primary-foreground/80 hover:text-primary-foreground">
+                                <Link href="/diseases" className="text-primary-foreground/80 hover:text-primary-foreground">
                                     Diseases
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/treatment" className="text-primary-foreground/80 hover:text-primary-foreground">
+                                <Link href="/treatment" className="text-primary-foreground/80 hover:text-primary-foreground">
                                     Treatment
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/testimonials" className="text-primary-foreground/80 hover:text-primary-foreground">
+                                <Link href="/testimonials" className="text-primary-foreground/80 hover:text-primary-foreground">
                                     Testimonials
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/contact" className="text-primary-foreground/80 hover:text-primary-foreground">
+                                <Link href="/contact" className="text-primary-foreground/80 hover:text-primary-foreground">
                                     Contact Us
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -122,44 +123,44 @@ const Footer = () => {
                         <h3 className="text-lg font-bold mb-4">Homeopathy</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a
+                                <Link
                                     href="/homeopathy/what-is-homeopathy"
                                     className="text-primary-foreground/80 hover:text-primary-foreground"
                                 >
                                     What is Homeopathy?
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/homeopathy/facts-and-myths"
                                     className="text-primary-foreground/80 hover:text-primary-foreground"
                                 >
                                     Facts and Myths
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/homeopathy/scientific-homeopathy"
                                     className="text-primary-foreground/80 hover:text-primary-foreground"
                                 >
                                     Scientific Homeopathy
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/homeopathy/research"
                                     className="text-primary-foreground/80 hover:text-primary-foreground"
                                 >
                                     Homeopathy Research
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/homeopathy/benefits"
                                     className="text-primary-foreground/80 hover:text-primary-foreground"
                                 >
                                     Benefits of Homeopathy
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
