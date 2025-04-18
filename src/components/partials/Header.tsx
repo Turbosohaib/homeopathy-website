@@ -21,6 +21,7 @@ const Header = () => {
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+    const [hasMounted, setHasMounted] = useState(false); // 👈 Fix
 
     const pathname = usePathname();
 
@@ -32,12 +33,15 @@ const Header = () => {
     };
 
     useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 640); // Tailwind 'sm' breakpoint
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 640); // Tailwind 'sm' breakpoint
+        };
+
         checkMobile();
+        setHasMounted(true); // 👈 Now ready for motion
         window.addEventListener("resize", checkMobile);
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,8 +57,12 @@ const Header = () => {
     return (
         <>
             <motion.header
-                initial={isMobile ? false : { y: -100, opacity: 0 }}
-                animate={isMobile ? {} : { y: showHeader ? 0 : -100, opacity: 1 }}
+                initial={
+                    hasMounted && !isMobile ? { y: -100, opacity: 0 } : false
+                }
+                animate={
+                    hasMounted && !isMobile ? { y: showHeader ? 0 : -100, opacity: 1 } : {}
+                }
                 transition={{ type: "spring", stiffness: 60, damping: 15 }}
                 className="sm:fixed sticky top-0 z-50 w-full bg-background border-b"
             >
