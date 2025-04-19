@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const Hero = () => {
     return (
-        <section className="relative h-screen">
+        <section className="relative h-[83vh] sm:h-screen">
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="relative h-full w-full">
                 <Image
