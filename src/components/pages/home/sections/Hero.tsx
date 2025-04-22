@@ -9,7 +9,7 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="relative h-full w-full">
                 <Image
-                    src="/assets/images/home-hero-img.webp?height=500&width=1920"
+                    src="/assets/images/home-hero1.webp?height=500&width=1920"
                     alt="Hero Background"
                     fill
                     className="object-cover"

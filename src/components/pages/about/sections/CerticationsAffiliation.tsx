@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const CerticationsAffiliation = () => {
     return (
-        <section className="py-16 px-6 sm:px-24 z-10">
+        <section id="certifications" className="py-16 px-6 sm:px-24 z-10">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">

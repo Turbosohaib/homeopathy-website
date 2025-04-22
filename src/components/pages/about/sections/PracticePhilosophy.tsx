@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 export const PracticePhilosophy = () => {
     return (
-        <section className="py-16 px-6 sm:px-24">
+        <section id="practice" className="py-16 px-6 sm:px-24">
             <div className="container">
                 <div className="text-center mb-12 z-10">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">

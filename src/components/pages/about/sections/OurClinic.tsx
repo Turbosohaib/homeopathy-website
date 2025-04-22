@@ -4,7 +4,7 @@ import { MapPin, Users, UserSquare, Sofa, Wind, Check } from 'lucide-react';
 
 export const OurClinic = () => {
     return (
-        <section className="py-16 px-6 sm:px-24 w-full flex items-center justify-center">
+        <section id="clinic" className="py-16 px-6 sm:px-24 w-full flex items-center justify-center">
             <div className="container z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">

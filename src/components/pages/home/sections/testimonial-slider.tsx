@@ -5,12 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore from "swiper";
+import SwiperCore, { Autoplay } from "swiper";             // ← import Autoplay
 import { motion } from "framer-motion";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import Arrow_Icon from "../../../../../public/assets/icons/arrow.svg";
+
+
 
 const testimonials = [
     {
@@ -39,9 +41,16 @@ const testimonials = [
     },
 ];
 
+// Register modules in non-hook context, disabling React Hooks rule
+/* eslint-disable react-hooks/rules-of-hooks */
+SwiperCore.use([Autoplay]);
+/* eslint-enable react-hooks/rules-of-hooks */
+
 export function TestimonialSlider() {
     const [activeIndex, setActiveIndex] = useState(0);
     const swiperRef = useRef<SwiperCore>(null);
+
+
 
     return (
         <section className="py-16 z-10">
