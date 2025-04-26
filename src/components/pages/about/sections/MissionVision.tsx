@@ -1,16 +1,37 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { BookOpen, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+
 export const MissionVision = () => {
+    const fadeInLeft = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+
+    const fadeInRight = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+
     return (
         <section id="mission" className="py-16 px-6 sm:px-24">
-            <div className="container">
+            <div className="">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="z-10">
+                    {/* Left Side */}
+                    <motion.div
+                        variants={fadeInLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="z-10"
+                    >
                         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
                             Our Mission & Vision
                         </h2>
-                        <div className="mt-4 h-1 w-20 bg-[#0059B3]"></div>
+                        <div className="mt-4 h-1 w-20 bg-[#0059B3]" />
                         <p className="mt-6 text-muted-foreground">
                             At Dr. Muhammad Zahid Homeopathy, our mission is to provide the
                             highest quality homeopathic care using scientific principles and
@@ -26,7 +47,7 @@ export const MissionVision = () => {
                         </p>
                         <div className="mt-8 flex flex-col sm:grid grid-cols-2 gap-4">
                             <div className="flex items-start">
-                                <div className="mr-4 h-12 px-3 w-12 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
+                                <div className="mr-4 h-12 w-12 px-3 rounded-full bg-[#0059B3]/10 flex items-center justify-center">
                                     <Heart className="h-6 w-6 text-[#0059B3]" />
                                 </div>
                                 <div>
@@ -48,15 +69,24 @@ export const MissionVision = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="relative h-[400px] rounded-lg overflow-hidden z-10">
+                    </motion.div>
+
+                    {/* Right Side */}
+                    <motion.div
+                        variants={fadeInRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="relative h-[400px] rounded-lg overflow-hidden z-10"
+                    >
                         <Image
-                            src="/assets/images/vision.jpg?height=400&width=600"
+                            src="/assets/images/ourmission.webp?height=400&width=600"
                             alt="Our Mission"
                             fill
                             className="object-cover"
+                            priority
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

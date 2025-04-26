@@ -5,18 +5,18 @@ import Link from "next/link";
 
 export const Hero = () => {
     return (
-        <section className="relative h-[83vh] sm:h-screen w-full">
+        <section className="relative h-[83vh] sm:h-[84.5vh] w-full">
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="relative h-full w-full">
                 <Image
-                    src="/assets/images/about-hero-img.jpg?height=400&width=1920"
+                    src="/assets/images/about-hero1.webp?height=300&width=1920"
                     alt="About Us Hero"
                     fill
                     className="object-cover"
                     priority
                 />
             </div>
-            <div className="container sm:mt-14 mt-0 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center text-white">
+            <div className="container absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center text-white">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fadeIn">
                     About Us
                 </h1>

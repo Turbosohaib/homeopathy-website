@@ -7,6 +7,8 @@ import Header from "@/components/partials/Header";
 import Footer from "@/components/partials/Footer";
 import { CallToAction } from "@/components/pages/about/sections";
 
+
+
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

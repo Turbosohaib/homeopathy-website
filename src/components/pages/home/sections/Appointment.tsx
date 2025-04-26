@@ -5,7 +5,7 @@ import AppointmentForm from "@/components/partials/appointment-form";
 export const Appointment = () => {
     return (
         <section id="appointment" className="py-16 sm:px-24">
-            <div className="container">
+            <div className="">
                 <div className="grid md:grid-cols-2 gap-12">
                     <div className="px-6 sm:px-0 z-10">
                         <h2 className="text-xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
@@ -29,7 +29,7 @@ export const Appointment = () => {
                                 <Mail className="h-5 w-5 text-[#0059B3] mt-0.5 mr-3" />
                                 <div>
                                     <h3 className="font-medium">Email</h3>
-                                    <p className="text-muted-foreground">info@sjconsult.org</p>
+                                    <p className="text-muted-foreground">homeopathiccare97@gmail.com</p>
                                 </div>
                             </div>
                             <div className="flex items-start">

@@ -1,23 +1,52 @@
-import React from 'react'
+"use client";
+
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Users, UserSquare, Sofa, Wind, Check } from 'lucide-react';
+import { MapPin, Users, UserSquare, Sofa, Wind, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const OurClinic = () => {
+    const fadeInLeft = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+    const fadeInRight = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+
     return (
-        <section id="clinic" className="py-16 px-6 sm:px-24 w-full flex items-center justify-center">
-            <div className="container z-10">
-                <div className="text-center mb-12">
+        <section
+            id="clinic"
+            className="py-16 px-6 sm:px-24 w-full flex items-center justify-center"
+        >
+            <div className=" z-10">
+                {/* Header */}
+                <motion.div
+                    variants={fadeInLeft}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    className="text-center mb-12"
+                >
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
                         Our Clinic
                     </h2>
-                    <div className="mt-4 h-1 w-20 bg-[#0059B3] mx-auto"></div>
+                    <div className="mt-4 h-1 w-20 bg-[#0059B3] mx-auto" />
                     <p className="mt-6 max-w-2xl mx-auto text-muted-foreground">
-                        Our simple yet comfortable clinic is designed to provide a
-                        healing environment for all patients.
+                        Our simple yet comfortable clinic is designed to provide a healing
+                        environment for all patients.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="max-w-3xl mx-auto">
+                {/* Content Card */}
+                <motion.div
+                    variants={fadeInRight}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    className="max-w-3xl mx-auto"
+                >
                     <Card className="border-0 shadow-md overflow-hidden">
                         <CardContent className="p-6">
                             <div className="flex items-start mb-6 border-b pb-6">
@@ -33,9 +62,8 @@ export const OurClinic = () => {
                             </div>
 
                             <p className="mb-6">
-                                Our clinic provides a comfortable environment for
-                                patients seeking homeopathic treatment. The facility
-                                features:
+                                Our clinic provides a comfortable environment for patients
+                                seeking homeopathic treatment. The facility features:
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -48,7 +76,6 @@ export const OurClinic = () => {
                                         Comfortable seating with privacy
                                     </p>
                                 </div>
-
                                 <div className="bg-[#0059B3]/5 rounded-lg p-4 flex flex-col items-center text-center">
                                     <div className="h-12 w-12 rounded-full bg-[#0059B3]/10 flex items-center justify-center mb-3">
                                         <Users className="h-6 w-6 text-[#0059B3]" />
@@ -67,7 +94,6 @@ export const OurClinic = () => {
                                     </span>
                                     Clinic Features
                                 </h4>
-
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-start">
                                         <div className="h-8 w-8 rounded-full bg-[#0059B3]/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
@@ -75,45 +101,50 @@ export const OurClinic = () => {
                                         </div>
                                         <div>
                                             <p className="font-medium">Separate Waiting Areas</p>
-                                            <p className="text-sm text-muted-foreground">For men and women</p>
+                                            <p className="text-sm text-muted-foreground">
+                                                For men and women
+                                            </p>
                                         </div>
                                     </div>
-
                                     <div className="flex items-start">
                                         <div className="h-8 w-8 rounded-full bg-[#0059B3]/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                                             <UserSquare className="h-4 w-4 text-[#0059B3]" />
                                         </div>
                                         <div>
                                             <p className="font-medium">Consultation Room</p>
-                                            <p className="text-sm text-muted-foreground">With Dr. Muhammad Zahid</p>
+                                            <p className="text-sm text-muted-foreground">
+                                                With Dr. Muhammad Zahid
+                                            </p>
                                         </div>
                                     </div>
-
                                     <div className="flex items-start">
                                         <div className="h-8 w-8 rounded-full bg-[#0059B3]/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                                             <Sofa className="h-4 w-4 text-[#0059B3]" />
                                         </div>
                                         <div>
                                             <p className="font-medium">Comfortable Seating</p>
-                                            <p className="text-sm text-muted-foreground">For patient comfort</p>
+                                            <p className="text-sm text-muted-foreground">
+                                                For patient comfort
+                                            </p>
                                         </div>
                                     </div>
-
                                     <div className="flex items-start">
                                         <div className="h-8 w-8 rounded-full bg-[#0059B3]/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                                             <Wind className="h-4 w-4 text-[#0059B3]" />
                                         </div>
                                         <div>
                                             <p className="font-medium">Peaceful Environment</p>
-                                            <p className="text-sm text-muted-foreground">Clean and calming atmosphere</p>
+                                            <p className="text-sm text-muted-foreground">
+                                                Clean and calming atmosphere
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
-                </div>
+                </motion.div>
             </div>
         </section>
-    )
-}
+    );
+};

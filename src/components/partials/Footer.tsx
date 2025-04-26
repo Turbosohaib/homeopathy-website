@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Footer = () => {
     return (
         <footer className="bg-[#0059B3] text-primary-foreground w-full flex justify-center items-center py-12 px-6 sm:px-24">
-            <div className="container">
+            <div className="">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                         <h3 className="text-lg font-bold mb-4">Dr. Muhammad Zahid Homeopathy</h3>

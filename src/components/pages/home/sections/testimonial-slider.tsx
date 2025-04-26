@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";             // ← import Autoplay
 import { motion } from "framer-motion";
 
+
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import Arrow_Icon from "../../../../../public/assets/icons/arrow.svg";

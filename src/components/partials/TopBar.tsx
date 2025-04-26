@@ -13,7 +13,7 @@ const TopBar = () => {
                     </div>
                     <div className="flex items-center space-x-1">
                         <Mail className="h-4 w-4" />
-                        <span className="text-sm">info@sjconsult.org</span>
+                        <span className="text-sm">homeopathiccare97@gmail.com</span>
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -23,7 +23,7 @@ const TopBar = () => {
                     </div>
                     <div className="flex items-center space-x-1">
                         <Clock className="h-4 w-4" />
-                        <span className="text-sm">Mon-Fri: 9AM-5PM</span>
+                        <span className="text-sm">Mon-Fri: 11AM-5PM</span>
                     </div>
                 </div>
             </div>

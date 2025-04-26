@@ -2,7 +2,7 @@
 import BackgroundAnimation from "@/components/partials/BackgroundAnimation";
 import {
     AboutDr,
-    CerticationsAffiliation,
+    QualificationsExperience,
     Hero,
     MissionVision,
     OurClinic,
@@ -32,7 +32,7 @@ export function AboutPage() {
                 <OurClinic />
 
                 {/* Certifications & Affiliations */}
-                <CerticationsAffiliation />
+                <QualificationsExperience />
             </main>
         </div>
     );

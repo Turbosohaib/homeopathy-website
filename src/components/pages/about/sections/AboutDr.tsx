@@ -1,22 +1,45 @@
+"use client";
+
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { Award, Building, GraduationCap } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const AboutDr = () => {
+    const fadeInLeft = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+
+    const fadeInRight = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+
     return (
-        <section id="about" className="py-16 px-6 sm:px-24 w-full flex items-center justify-center">
-            <div className="container z-10">
+        <section
+            id="about"
+            className="py-16 px-6 sm:px-24 w-full flex items-center justify-center"
+        >
+            <div className=" z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0059B3]">
                         Meet Dr. Muhammad Zahid
                     </h2>
-                    <div className="mt-4 h-1 w-20 bg-[#0059B3] mx-auto"></div>
+                    <div className="mt-4 h-1 w-20 bg-[#0059B3] mx-auto" />
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 items-start">
-                    <div className="md:col-span-1">
+                    {/* Left Column */}
+                    <motion.div
+                        className="md:col-span-1"
+                        variants={fadeInLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
                         <div className="sticky top-24">
                             <div className="relative h-[400px] rounded-lg overflow-hidden mb-6">
                                 <Image
@@ -24,6 +47,7 @@ export const AboutDr = () => {
                                     alt="Dr. Muhammad Zahid"
                                     fill
                                     className="object-cover"
+                                    priority
                                 />
                             </div>
                             <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -46,10 +70,14 @@ export const AboutDr = () => {
                                     </div>
                                 </div>
                                 <div className="mt-6 flex space-x-4">
+                                    {/* social links */}
                                     <Link
-                                        href="#"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://www.facebook.com/Singleremedian1199"
                                         className="h-10 w-10 rounded-full bg-[#0059B3]/10 flex items-center justify-center text-primary hover:bg-[#0059B3]/20 transition-colors"
                                     >
+                                        {/* Facebook icon */}
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -67,8 +95,11 @@ export const AboutDr = () => {
                                     </Link>
                                     <Link
                                         href="#"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="h-10 w-10 rounded-full bg-[#0059B3]/10 flex items-center justify-center text-primary hover:bg-[#0059B3]/20 transition-colors"
                                     >
+                                        {/* Twitter icon */}
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -85,9 +116,12 @@ export const AboutDr = () => {
                                         </svg>
                                     </Link>
                                     <Link
-                                        href="#"
+                                        href="https://www.linkedin.com/in/muhammad-zahid-05283579/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="h-10 w-10 rounded-full bg-[#0059B3]/10 flex items-center justify-center text-primary hover:bg-[#0059B3]/20 transition-colors"
                                     >
+                                        {/* LinkedIn icon */}
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -108,9 +142,16 @@ export const AboutDr = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="md:col-span-2">
+                    {/* Right Column */}
+                    <motion.div
+                        className="md:col-span-2"
+                        variants={fadeInRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
                         <Tabs defaultValue="biography" className="w-full">
                             <TabsList className="grid w-full grid-cols-3">
                                 <TabsTrigger className="cursor-pointer" value="biography">
@@ -123,13 +164,12 @@ export const AboutDr = () => {
                                     Research
                                 </TabsTrigger>
                             </TabsList>
+
+                            {/* Tab Contents */}
                             <TabsContent
                                 value="biography"
                                 className="p-6 bg-white rounded-lg shadow-sm mt-4"
                             >
-                                <h3 className="text-xl font-bold mb-4">
-                                    Professional Background
-                                </h3>
                                 <p className="mb-4">
                                     Dr. Muhammad Zahid is a renowned homeopathic physician with
                                     over 20 years of experience in treating various chronic and
@@ -308,9 +348,9 @@ export const AboutDr = () => {
                                 </div>
                             </TabsContent>
                         </Tabs>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };

@@ -32,7 +32,7 @@ export const Homeopathy = () => {
 
     return (
         <section className="py-16 px-6 sm:px-24 z-10" ref={ref}>
-            <div className="container z-10">
+            <div className=" z-10">
                 <motion.div
                     className="text-center mb-12 z-10"
                     variants={fadeUp}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,7 @@ const navItems = [
             { href: "/about#about", label: "About Dr. Muhammad Zahid" },
             { href: "/about#clinic", label: "Our Clinic" },
             { href: "/about#practice", label: "Practice Philosophy" },
-            { href: "/about#certifications", label: "Certifications" },
+            { href: "/about#qualifications", label: "Qualifications" },
         ],
     },
     {
@@ -75,6 +76,7 @@ const navItems = [
     },
     { href: "/contact", label: "Contact Us", submenu: false },
 ];
+
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -137,14 +139,8 @@ const Header = () => {
     return (
         <>
             <motion.header
-                initial={hasMounted && !isMobile ? { y: -100, opacity: 0 } : false}
-                animate={
-                    hasMounted && !isMobile
-                        ? { y: showHeader ? 0 : -100, opacity: 1 }
-                        : {}
-                }
                 transition={{ type: "spring", stiffness: 60, damping: 15 }}
-                className="sm:fixed sticky top-0 z-50 w-full bg-background border-b"
+                className="sticky top-0 sm:top-[-40px] z-50 w-full bg-background border-b"
             >
                 <TopBar />
                 <div className="flex h-16 items-center justify-between sm:px-6 px-5">
@@ -287,6 +283,7 @@ const Header = () => {
                                                         >
                                                             {item.submenuItems?.map((sub, sidx2) => (
                                                                 <Link
+                                                                    onClick={() => setIsOpen(false)}
                                                                     key={sidx2}
                                                                     href={sub.href}
                                                                     className={`block py-1.5 text-sm ${isActive(sub.href) ? "text-[#0059B3] font-medium" : "text-gray-700"}`}

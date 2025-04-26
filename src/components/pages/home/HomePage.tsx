@@ -39,6 +39,7 @@ export function HomePage() {
                 {/* Appointment Section */}
                 <Appointment />
             </main>
+
         </div>
     );
 }

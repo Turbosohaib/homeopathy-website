@@ -63,7 +63,7 @@ export function TreatmentSection() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="container"
+                className=""
             >
                 <motion.div
                     variants={item}
