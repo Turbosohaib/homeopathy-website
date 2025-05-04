@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body className={`${quicksand.className}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <div className="flex flex-col min-h-screen bg-[#f0fdf4]">
+          <div className="bg-[#f0fdf4]">
             <Header />
             {children}
             {/* CTA Section */}

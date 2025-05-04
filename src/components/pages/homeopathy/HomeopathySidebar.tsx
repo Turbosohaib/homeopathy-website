@@ -10,10 +10,10 @@ interface HomeopathySidebarProps {
 }
 
 const homeopathyLinks = [
-    { title: "What is Homeopathy?", href: "/homeopathy/what-is-homeopathy" },
+    { title: "What is Homeopathy?", href: "/homeopathy/what-is-homeopathy#whatishomeopathy" },
     { title: "What Homeopathy is Not", href: "/homeopathy/what-homeopathy-is-not" },
     { title: "What Your Doctor Won't Tell You", href: "/homeopathy/what-doctors-wont-tell" },
-    { title: "Facts and Myths", href: "/homeopathy/facts-and-myths" },
+    { title: "Facts and Myths", href: "/homeopathy/facts-and-myths#facts&myths" },
     { title: "Scientific Homeopathy", href: "/homeopathy/scientific-homeopathy" },
     { title: "Homeopathy Research", href: "/homeopathy/research" },
     { title: "What Doctors Should Know", href: "/homeopathy/for-doctors" },
