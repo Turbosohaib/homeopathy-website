@@ -77,7 +77,6 @@ const navItems = [
     { href: "/contact", label: "Contact Us", submenu: false },
 ];
 
-
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showHeader, setShowHeader] = useState(true);

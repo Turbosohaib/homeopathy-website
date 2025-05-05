@@ -29,7 +29,7 @@ export default function WhatHomeopathyIsNotPage() {
                 </div>
             </section>
 
-            <main className="flex-1 w-full flex flex-col justify-center items-center">
+            <main id="whathomeopathyisnot" className="flex-1 w-full flex flex-col justify-center items-center">
                 {/* Breadcrumb */}
                 <section className="border-b bg-muted/30 w-full px-6 z-10">
                     <div className="py-4">
@@ -53,7 +53,7 @@ export default function WhatHomeopathyIsNotPage() {
                         <div className="grid md:grid-cols-4 gap-10">
                             {/* Sidebar */}
                             <div className="md:col-span-1">
-                                <HomeopathySidebar currentPath="/homeopathy/what-homeopathy-is-not" />
+                                <HomeopathySidebar currentPath="/homeopathy/what-homeopathy-is-not#whathomeopathyisnot" />
                             </div>
 
                             {/* Main Content */}
@@ -158,7 +158,7 @@ export default function WhatHomeopathyIsNotPage() {
                                                 <li>Diagnostic procedures that provide valuable information about health conditions</li>
                                             </ul>
                                             <p className="mt-4">
-                                                At Dr. Shah Homeopathy, we believe in an integrative approach that utilizes the best of both
+                                                At Dr. Zahid Homeopathy, we believe in an integrative approach that utilizes the best of both
                                                 homeopathic and conventional medicine for optimal patient care.
                                             </p>
                                         </CardContent>
@@ -222,7 +222,7 @@ export default function WhatHomeopathyIsNotPage() {
                                         <p>
                                             By understanding what homeopathy is not, we can better appreciate what it truly is: a systematic,
                                             individualized approach to healthcare that aims to stimulate the body&apos;s natural healing abilities.
-                                            At Dr. Shah Homeopathy, we are committed to practicing evidence-based homeopathy that
+                                            At Dr. Zahid Homeopathy, we are committed to practicing evidence-based homeopathy that
                                             complements—rather than conflicts with—conventional medicine when appropriate.
                                         </p>
                                         <p className="mt-2">
