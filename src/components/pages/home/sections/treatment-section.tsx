@@ -11,7 +11,7 @@ const treatments = [
     {
         id: 1,
         title: "Chronic Diseases",
-        image: "/assets/images/treatment1.jpg?height=200&width=300",
+        image: "/assets/images/chronic-diseases-illustration.webp?height=200&width=300",
         description:
             "Effective homeopathic treatments for chronic conditions like arthritis, asthma, and autoimmune disorders.",
         link: "/diseases/chronic",
@@ -21,7 +21,7 @@ const treatments = [
         title: "Skin Conditions",
         description:
             "Natural remedies for eczema, psoriasis, acne, and other persistent skin problems.",
-        image: "/assets/images/treatment2.png?height=200&width=300",
+        image: "/assets/images/skin-condition-illustration.webp?height=200&width=300",
         link: "/diseases/skin",
     },
     {
@@ -29,7 +29,7 @@ const treatments = [
         title: "Digestive Disorders",
         description:
             "Homeopathic approaches to IBS, acid reflux, Crohn's disease, and other digestive issues.",
-        image: "/assets/images/treatment3.jpg?height=200&width=300",
+        image: "/assets/images/digestive-disorders-illustration.webp?height=200&width=300",
         link: "/diseases/digestive",
     },
     {
@@ -37,7 +37,7 @@ const treatments = [
         title: "Mental Health",
         description:
             "Support for anxiety, depression, stress, and other mental health concerns through homeopathy.",
-        image: "/assets/images/treatment4.png?height=200&width=300",
+        image: "/assets/images/mental-health-illustration.webp?height=200&width=300",
         link: "/diseases/mental-health",
     },
 ];

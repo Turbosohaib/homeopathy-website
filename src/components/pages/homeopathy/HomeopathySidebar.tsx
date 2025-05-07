@@ -120,7 +120,7 @@ export default function HomeopathySidebar({ currentPath }: HomeopathySidebarProp
 
   return (
     <motion.div
-      className="bg-muted/30 rounded-lg p-6 sticky top-24 flex flex-col max-h-[calc(140vh-120px)]"
+      className="bg-muted/30 rounded-lg p-6 sticky top-14 flex flex-col max-h-[calc(140vh-120px)]"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

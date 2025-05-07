@@ -37,7 +37,7 @@ export function WhatIsHomeopathyPage() {
         <BreadCrumb currentPage="Homeopathy" subPage="What is Homeopathy" />
 
         {/* Content Section */}
-        <section className="py-16">
+        <section className="pb-16 pt-5 w-full">
           <div className="px-6 sm:pr-10 sm:pl-0">
             <div className="grid md:grid-cols-4 gap-10">
               {/* Sidebar */}
@@ -46,7 +46,7 @@ export function WhatIsHomeopathyPage() {
               </div>
 
               {/* Main Content */}
-              <div className="md:col-span-3">
+              <div className="md:col-span-3 pt-10">
                 <h2 className="text-3xl font-bold tracking-tight">
                   The Fundamentals of Homeopathy
                 </h2>
