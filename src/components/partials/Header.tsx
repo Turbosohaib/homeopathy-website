@@ -156,7 +156,7 @@ const Header = () => {
                                 className="rounded-md"
                             />
                         </motion.div>
-                        <span className="text-xl font-bold">Dr. Muhammad Zahid</span>
+                        <span className="text-xl font-bold">Dr. Zahid</span>
                     </Link>
 
                     {/* Desktop Navigation */}

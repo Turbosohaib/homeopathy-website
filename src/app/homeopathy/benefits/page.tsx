@@ -39,7 +39,7 @@ export default function BenefitsOfHomeopathyPage() {
         </div>
       </section>
 
-      <main className="flex-1 w-full flex flex-col justify-center items-center">
+      <main id="benefits" className="flex-1 w-full flex flex-col justify-center items-center">
         {/* Breadcrumb */}
         <section className="border-b bg-muted/30 w-full px-6 z-10">
           <div className="py-4">
@@ -60,14 +60,14 @@ export default function BenefitsOfHomeopathyPage() {
         {/* Content Section */}
         <section className="pb-16 pt-5 w-full">
           <div className="px-6 sm:pr-10 sm:pl-0">
-            <div className="grid md:grid-cols-4 gap-10">
+            <div className="grid md:grid-cols-10 gap-10">
               {/* Sidebar */}
-              <div className="md:col-span-1">
-                <HomeopathySidebar currentPath="/homeopathy/benefits" />
+              <div className="md:col-span-3">
+                <HomeopathySidebar currentPath="/homeopathy/benefits#benefits" />
               </div>
 
               {/* Main Content */}
-              <div className="md:col-span-3 pt-10">
+              <div className="md:col-span-7 pt-10">
                 <h2 className="text-3xl font-bold tracking-tight">The Advantages of Homeopathic Treatment</h2>
                 <div className="mt-4 h-1 w-20 bg-primary"></div>
 

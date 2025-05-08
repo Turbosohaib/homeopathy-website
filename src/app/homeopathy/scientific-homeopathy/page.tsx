@@ -61,14 +61,14 @@ export default function ScientificHomeopathyPage() {
                 {/* Content Section */}
                 <section className="pb-16 pt-5 w-full">
                     <div className="px-6 sm:pr-10 sm:pl-0">
-                        <div className="grid md:grid-cols-4 gap-10">
+                        <div className="grid md:grid-cols-10 gap-10">
                             {/* Sidebar */}
-                            <div className="md:col-span-1">
+                            <div className="md:col-span-3">
                                 <HomeopathySidebar currentPath="/homeopathy/scientific-homeopathy#scientifichomeopathy" />
                             </div>
 
                             {/* Main Content */}
-                            <div className="md:col-span-3 pt-10">
+                            <div className="md:col-span-7 pt-10">
                                 <h2 className="text-3xl font-bold tracking-tight">
                                     The Science Behind Homeopathy
                                 </h2>

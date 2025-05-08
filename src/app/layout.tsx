@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider"
 import Header from "@/components/partials/Header";
 import Footer from "@/components/partials/Footer";
 import { CallToAction } from "@/components/pages/about/sections";
+import { WhatsAppButton } from "@/components/partials/WhatsAppButton";
 
 
 
@@ -26,7 +27,8 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body className={`${quicksand.className}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <div className="bg-[#f0fdf4]">
+          <div className="relative bg-[#f0fdf4]">
+            <WhatsAppButton phone="03339291199"/>
             <Header />
             {children}
             {/* CTA Section */}

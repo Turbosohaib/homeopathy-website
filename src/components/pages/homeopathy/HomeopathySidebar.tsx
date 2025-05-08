@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { ChevronUp, ChevronDown } from "lucide-react"
 
@@ -11,50 +10,21 @@ interface HomeopathySidebarProps {
 }
 
 const homeopathyLinks = [
-  {
-    title: "What is Homeopathy?",
-    href: "/homeopathy/what-is-homeopathy#whatishomeopathy",
-  },
-  {
-    title: "What Homeopathy is Not",
-    href: "/homeopathy/what-homeopathy-is-not#whathomeopathyisnot",
-  },
-  {
-    title: "What Your Doctor Won't Tell You",
-    href: "/homeopathy/what-doctors-wont-tell#whatdoctorswonttell",
-  },
+  { title: "What is Homeopathy?", href: "/homeopathy/what-is-homeopathy#whatishomeopathy" },
+  { title: "What Homeopathy is Not", href: "/homeopathy/what-homeopathy-is-not#whathomeopathyisnot" },
+  { title: "What Your Doctor Won't Tell You", href: "/homeopathy/what-doctors-wont-tell#whatdoctorswonttell" },
   { title: "Facts and Myths", href: "/homeopathy/facts-and-myths#facts&myths" },
   { title: "Scientific Homeopathy", href: "/homeopathy/scientific-homeopathy#scientifichomeopathy" },
   { title: "Homeopathy Research", href: "/homeopathy/research#research" },
   { title: "What Doctors Should Know", href: "/homeopathy/for-doctors#fordoctors" },
-  {
-    title: "How to Find a Good Homeopath?",
-    href: "/homeopathy/find-good-homeopath#findgooddoctor",
-  },
-  { title: "Benefits of Homeopathy", href: "/homeopathy/benefits" },
-  { title: "FAQ on Various Diseases", href: "/homeopathy/faq-diseases" },
-  { title: "Homeopathic Clinics", href: "/homeopathy/clinics" },
-  {
-    title: "Integration with Conventional Medicine",
-    href: "/homeopathy/integration-conventional-medicine",
-  },
+  { title: "How to Find a Good Homeopath?", href: "/homeopathy/find-good-homeopath#findgooddoctor" },
+  { title: "Benefits of Homeopathy", href: "/homeopathy/benefits#benefits" },
+  { title: "FAQ on Various Diseases", href: "/homeopathy/faq-diseases#faq" },
+  { title: "Homeopathic Clinics", href: "/homeopathy/clinics#clinic" },
+  { title: "Integration with Conventional Medicine", href: "/homeopathy/integration-conventional-medicine" },
   { title: "Homeopathic Doctors", href: "/homeopathy/doctors" },
   { title: "Sources of Medicines", href: "/homeopathy/medicine-sources" },
 ]
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-}
 
 export default function HomeopathySidebar({ currentPath }: HomeopathySidebarProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -65,7 +35,7 @@ export default function HomeopathySidebar({ currentPath }: HomeopathySidebarProp
   const scrollContainer = (direction: "up" | "down") => {
     if (!scrollContainerRef.current) return
 
-    const scrollAmount = 150 // Adjust this value as needed
+    const scrollAmount = 150
     const currentScroll = scrollContainerRef.current.scrollTop
 
     scrollContainerRef.current.scrollTo({
@@ -74,63 +44,46 @@ export default function HomeopathySidebar({ currentPath }: HomeopathySidebarProp
     })
   }
 
-  // Check if scrolling is possible
+  // Check scrollability
   const checkScrollability = () => {
     if (!scrollContainerRef.current) return
-
     const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current
     setCanScrollUp(scrollTop > 0)
-    setCanScrollDown(scrollTop < scrollHeight - clientHeight - 5) // 5px buffer
+    setCanScrollDown(scrollTop < scrollHeight - clientHeight - 5)
   }
 
-  // Set up scroll event listener
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current
-    if (scrollContainer) {
+    const container = scrollContainerRef.current
+    if (container) {
       checkScrollability()
-      scrollContainer.addEventListener("scroll", checkScrollability)
-
-      // Also check on window resize
+      container.addEventListener("scroll", checkScrollability)
       window.addEventListener("resize", checkScrollability)
-
       return () => {
-        scrollContainer.removeEventListener("scroll", checkScrollability)
+        container.removeEventListener("scroll", checkScrollability)
         window.removeEventListener("resize", checkScrollability)
       }
     }
   }, [])
 
-  // Scroll to active link on initial render
+  // Scroll to active link on mount or path change
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      const activeLink = scrollContainerRef.current.querySelector(`a[href="${currentPath}"]`)
+    const container = scrollContainerRef.current
+    if (container) {
+      const activeLink = container.querySelector(`a[href=\"${currentPath}\"]`)
       if (activeLink) {
-        // Scroll the active link into view with some offset
-        const containerTop = scrollContainerRef.current.offsetTop
+        const containerTop = container.offsetTop
         const linkTop = (activeLink as HTMLElement).offsetTop
-        const containerHeight = scrollContainerRef.current.clientHeight
-
-        // Center the active link if possible
-        scrollContainerRef.current.scrollTop = linkTop - containerTop - containerHeight / 2 + 30
-
+        const containerHeight = container.clientHeight
+        container.scrollTop = linkTop - containerTop - containerHeight / 2 + 30
         checkScrollability()
       }
     }
   }, [currentPath])
 
   return (
-    <motion.div
-      className="bg-muted/30 rounded-lg p-6 sticky top-14 flex flex-col max-h-[calc(140vh-120px)]"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <motion.h3 className="text-lg font-bold mb-4" variants={itemVariants}>
-        Homeopathy Topics
-      </motion.h3>
+    <div className="bg-muted/30 rounded-lg p-6 sticky top-14 flex flex-col max-h-[calc(140vh-120px)]">
+      <h3 className="text-lg font-bold mb-4">Homeopathy Topics</h3>
 
-      {/* Scroll up button */}
       {canScrollUp && (
         <button
           onClick={() => scrollContainer("up")}
@@ -144,33 +97,29 @@ export default function HomeopathySidebar({ currentPath }: HomeopathySidebarProp
       <div
         ref={scrollContainerRef}
         className="overflow-y-auto pr-2 flex-grow custom-scrollbar"
-        style={{
-          scrollbarWidth: "thin",
-          scrollbarColor: "#e3e6e8 #f1f5f9",
-        }}
+        style={{ scrollbarWidth: "thin", scrollbarColor: "#e3e6e8 #f1f5f9" }}
       >
-        <motion.nav>
-          <motion.ul className="space-y-2">
+        <nav>
+          <ul className="space-y-2">
             {homeopathyLinks.map((link, index) => (
-              <motion.li key={index} variants={itemVariants}>
+              <li key={index}>
                 <Link
                   href={link.href}
                   className={cn(
                     "block py-2 px-3 rounded-md transition-colors",
                     currentPath === link.href
                       ? "bg-[#0059B3] text-primary-foreground font-medium"
-                      : "hover:bg-muted text-muted-foreground hover:text-foreground",
+                      : "hover:bg-muted text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {link.title}
                 </Link>
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
-        </motion.nav>
+          </ul>
+        </nav>
       </div>
 
-      {/* Scroll down button */}
       {canScrollDown && (
         <button
           onClick={() => scrollContainer("down")}
@@ -181,13 +130,13 @@ export default function HomeopathySidebar({ currentPath }: HomeopathySidebarProp
         </button>
       )}
 
-      <motion.div className="mt-4 p-4 bg-primary/10 rounded-lg" variants={itemVariants}>
+      <div className="mt-4 p-4 bg-primary/10 rounded-lg">
         <h4 className="font-bold text-primary">Need Help?</h4>
         <p className="text-sm mt-2">Have questions about homeopathic treatment?</p>
         <Link href="/contact" className="mt-3 text-sm font-medium text-primary hover:underline inline-block">
           Contact Us
         </Link>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   )
 }

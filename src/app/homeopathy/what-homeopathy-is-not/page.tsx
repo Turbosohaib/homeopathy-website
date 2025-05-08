@@ -50,14 +50,14 @@ export default function WhatHomeopathyIsNotPage() {
                 {/* Content Section */}
                 <section className="pb-16 pt-5 w-full">
                     <div className="px-6 sm:pr-10 sm:pl-0">
-                        <div className="grid md:grid-cols-4 gap-10">
+                        <div className="grid md:grid-cols-10 gap-10">
                             {/* Sidebar */}
-                            <div className="md:col-span-1">
+                            <div className="md:col-span-3">
                                 <HomeopathySidebar currentPath="/homeopathy/what-homeopathy-is-not#whathomeopathyisnot" />
                             </div>
 
                             {/* Main Content */}
-                            <div className="md:col-span-3 pt-10">
+                            <div className="md:col-span-7 pt-10">
                                 <h2 className="text-3xl font-bold tracking-tight">Clarifying Misconceptions About Homeopathy</h2>
                                 <div className="mt-4 h-1 w-20 bg-primary"></div>
 
